@@ -45,6 +45,8 @@ st.title('Random Forest')
 # Display subheader for raw data
 st.subheader('Raw Data')
 
+# URL of the CSV file containing insurance data
+csv_url = 'seattle_weather.csv'
+# Read the CSV data into a DataFrame
+df = pd.read_csv(csv_url)
 
-if __name__ == "__main__":
-    run()
