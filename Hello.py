@@ -15,36 +15,35 @@
 import streamlit as st
 from streamlit.logger import get_logger
 
+
+import pandas as pd
+import seaborn as sns
+import numpy as np
+import plotly.express as px
+import matplotlib.pyplot as plt
+from scipy import stats
+from sklearn import metrics
+from sklearn.cluster import KMeans
+from sklearn.linear_model import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from scipy.special import inv_boxcox
+from scipy.stats import boxcox_normplot
+
 LOGGER = get_logger(__name__)
 
 
 def run():
     st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
+        page_title="Weather predictions",
+        page_icon=":)",
     )
 
-    st.write("# Welcome to Streamlit! 👋")
+# Display title
+st.title('Random Forest')
 
-    st.sidebar.success("Select a demo above.")
-
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
+# Display subheader for raw data
+st.subheader('Raw Data')
 
 
 if __name__ == "__main__":
